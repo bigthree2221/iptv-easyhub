@@ -3,6 +3,12 @@ import { Tv2, CreditCard, Smartphone, Laptop, MonitorPlay } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Index = () => {
+  const handleWhatsAppClick = () => {
+    const message = encodeURIComponent("Bonjour, je souhaite bénéficier d'un essai gratuit de 24h pour vérifier la stabilité du service IPTV avant l'achat.");
+    const whatsappUrl = `https://wa.me/+33600000000?text=${message}`; // Remplacez par votre numéro WhatsApp
+    window.open(whatsappUrl, '_blank');
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-900 to-black text-white">
       {/* Hero Section */}
@@ -17,6 +23,7 @@ const Index = () => {
           <Button 
             size="lg"
             className="bg-blue-600 hover:bg-blue-700"
+            onClick={handleWhatsAppClick}
           >
             Essai Gratuit 24h
           </Button>
