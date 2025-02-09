@@ -74,6 +74,45 @@ const Index = () => {
           </div>
         </div>
 
+        <div className="mt-20">
+          <h2 className="text-3xl font-bold mb-8 text-center">Démonstrations</h2>
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="bg-gray-800/50 backdrop-blur-sm rounded-xl overflow-hidden">
+              <div className="aspect-video bg-gray-900 relative">
+                <iframe 
+                  className="w-full h-full"
+                  src="https://www.youtube.com/embed/VIDEO_ID_1" 
+                  title="Navigation dans l'interface IPTV" 
+                  frameBorder="0" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                  allowFullScreen
+                ></iframe>
+              </div>
+              <div className="p-4">
+                <h3 className="text-xl font-semibold mb-2">Navigation dans l'Interface</h3>
+                <p className="text-gray-400">Découvrez la simplicité de navigation dans notre interface IPTV</p>
+              </div>
+            </div>
+
+            <div className="bg-gray-800/50 backdrop-blur-sm rounded-xl overflow-hidden">
+              <div className="aspect-video bg-gray-900 relative">
+                <iframe 
+                  className="w-full h-full"
+                  src="https://www.youtube.com/embed/VIDEO_ID_2" 
+                  title="Configuration rapide" 
+                  frameBorder="0" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                  allowFullScreen
+                ></iframe>
+              </div>
+              <div className="p-4">
+                <h3 className="text-xl font-semibold mb-2">Configuration Rapide</h3>
+                <p className="text-gray-400">Guide étape par étape pour configurer votre service IPTV</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div className="mt-20 text-center">
           <h2 className="text-3xl font-bold mb-8">Appareils Compatibles</h2>
           <div className="flex justify-center gap-8 flex-wrap">
