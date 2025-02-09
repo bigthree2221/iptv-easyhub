@@ -18,7 +18,7 @@ const Index = () => {
             size="lg"
             className="bg-blue-600 hover:bg-blue-700"
           >
-            Commencer Maintenant
+            Essai Gratuit 24h
           </Button>
         </div>
 
