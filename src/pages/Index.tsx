@@ -1,5 +1,4 @@
-
-import { Tv2, CreditCard, Smartphone, Laptop, MonitorPlay } from "lucide-react";
+import { Tv2, CreditCard, Smartphone, Laptop, MonitorPlay, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Index = () => {
@@ -7,6 +6,10 @@ const Index = () => {
     const message = encodeURIComponent("Bonjour, je souhaite bénéficier d'un essai gratuit de 24h pour vérifier la stabilité du service IPTV avant l'achat.");
     const whatsappUrl = `https://wa.me/+33600000000?text=${message}`; // Remplacez par votre numéro WhatsApp
     window.open(whatsappUrl, '_blank');
+  };
+
+  const handleInstallClick = () => {
+    window.open('https://www.iptvsmarters.com/', '_blank');
   };
 
   return (
@@ -19,13 +22,24 @@ const Index = () => {
           <p className="text-xl text-gray-300 mb-8">
             Accédez à des milliers de chaînes du monde entier avec notre service IPTV fiable
           </p>
-          <Button 
-            size="lg"
-            className="bg-blue-600 hover:bg-blue-700"
-            onClick={handleWhatsAppClick}
-          >
-            Essai Gratuit 24h
-          </Button>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button 
+              size="lg"
+              className="bg-blue-600 hover:bg-blue-700"
+              onClick={handleWhatsAppClick}
+            >
+              Essai Gratuit 24h
+            </Button>
+            <Button 
+              size="lg"
+              variant="outline"
+              className="border-blue-500 text-blue-500 hover:bg-blue-500/10"
+              onClick={handleInstallClick}
+            >
+              <Download className="mr-2" />
+              Installation IPTV
+            </Button>
+          </div>
         </div>
 
         <div className="grid md:grid-cols-3 gap-8 mt-20">
