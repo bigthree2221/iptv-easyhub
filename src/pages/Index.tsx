@@ -50,6 +50,28 @@ const Index = () => {
             </div>
             <h3 className="text-xl font-semibold mb-2">Chaînes TV en Direct</h3>
             <p className="text-gray-400">Regardez vos chaînes préférées en qualité HD</p>
+            <div className="flex flex-wrap gap-4 mt-4 justify-center">
+              <div className="flex items-center gap-2">
+                <Tv2 className="w-6 h-6 text-white" />
+                <span className="text-sm">Canal+</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Play className="w-6 h-6 text-red-500" />
+                <span className="text-sm">DAZN</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Monitor className="w-6 h-6 text-green-500" />
+                <span className="text-sm">beIN Sports</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Film className="w-6 h-6 text-orange-500" />
+                <span className="text-sm">NBA</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Video className="w-6 h-6 text-red-600" />
+                <span className="text-sm">ESPN</span>
+              </div>
+            </div>
           </div>
 
           <div className="bg-gray-800/50 backdrop-blur-sm p-6 rounded-xl">
