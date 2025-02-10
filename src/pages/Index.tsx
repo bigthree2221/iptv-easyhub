@@ -1,5 +1,4 @@
-
-import { Tv2, CreditCard, Smartphone, Laptop, MonitorPlay, Download } from "lucide-react";
+import { Tv2, CreditCard, Smartphone, Laptop, MonitorPlay, Download, Video, Film, Play, Monitor, Tv } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Index = () => {
@@ -66,6 +65,28 @@ const Index = () => {
             </div>
             <h3 className="text-xl font-semibold mb-2">Contenu à la Demande</h3>
             <p className="text-gray-400">Accédez à une vaste bibliothèque de films et séries</p>
+            <div className="flex flex-wrap gap-4 mt-4 justify-center">
+              <div className="flex items-center gap-2">
+                <Monitor className="w-6 h-6 text-red-500" title="Netflix" />
+                <span className="text-sm">Netflix</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Film className="w-6 h-6 text-purple-500" title="HBO Max" />
+                <span className="text-sm">HBO Max</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Play className="w-6 h-6 text-blue-500" title="Disney+" />
+                <span className="text-sm">Disney+</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Video className="w-6 h-6 text-yellow-500" title="Prime Video" />
+                <span className="text-sm">Prime Video</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Tv className="w-6 h-6 text-gray-300" title="Apple TV" />
+                <span className="text-sm">Apple TV</span>
+              </div>
+            </div>
           </div>
         </div>
 
