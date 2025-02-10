@@ -1,10 +1,11 @@
+
 import { Tv2, CreditCard, Smartphone, Laptop, MonitorPlay, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Index = () => {
   const handleWhatsAppClick = () => {
     const message = encodeURIComponent("Bonjour, je souhaite bénéficier d'un essai gratuit de 24h pour vérifier la stabilité du service IPTV avant l'achat.");
-    const whatsappUrl = `https://wa.me/+33600000000?text=${message}`; // Remplacez par votre numéro WhatsApp
+    const whatsappUrl = `https://wa.me/+221769661503?text=${message}`;
     window.open(whatsappUrl, '_blank');
   };
 
