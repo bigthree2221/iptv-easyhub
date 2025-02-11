@@ -1,5 +1,4 @@
-
-import { Tv2, CreditCard, Smartphone, Laptop, MonitorPlay, Download, Video, Film, Play, Monitor, Tv, Calendar } from "lucide-react";
+import { Tv2, CreditCard, Smartphone, Laptop, MonitorPlay, Download, Video, Film, Play, Monitor, Tv, Calendar, Tablet } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Index = () => {
