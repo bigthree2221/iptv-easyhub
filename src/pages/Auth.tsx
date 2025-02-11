@@ -52,7 +52,23 @@ const Auth = () => {
           email,
           password,
         });
-        if (error) throw error;
+        if (error) {
+          // Handle email not confirmed error
+          if (error.message === "Email not confirmed") {
+            toast({
+              variant: "destructive",
+              title: "Email non confirmé",
+              description: "Veuillez vérifier votre boîte mail et confirmer votre email avant de vous connecter.",
+            });
+          } else {
+            toast({
+              variant: "destructive",
+              title: "Erreur",
+              description: error.message,
+            });
+          }
+          return;
+        }
         navigate("/");
       }
     } catch (error: any) {
