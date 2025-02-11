@@ -24,7 +24,25 @@ const Auth = () => {
           email,
           password,
         });
-        if (error) throw error;
+        
+        if (error) {
+          // Gestion spécifique de l'erreur de rate limiting
+          if (error.status === 429) {
+            toast({
+              variant: "destructive",
+              title: "Veuillez patienter",
+              description: "Pour des raisons de sécurité, veuillez attendre 55 secondes avant de réessayer.",
+            });
+          } else {
+            toast({
+              variant: "destructive",
+              title: "Erreur",
+              description: error.message,
+            });
+          }
+          return;
+        }
+        
         toast({
           title: "Inscription réussie",
           description: "Veuillez vérifier votre email pour confirmer votre compte.",
