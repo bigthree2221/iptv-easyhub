@@ -1,5 +1,4 @@
-
-import { Tv2, CreditCard, Smartphone, Laptop, MonitorPlay, Download, Video, Film, Play, Monitor, Tv } from "lucide-react";
+import { Tv2, CreditCard, Smartphone, Laptop, MonitorPlay, Download, Video, Film, Play, Monitor, Tv, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Index = () => {
@@ -80,6 +79,28 @@ const Index = () => {
             </div>
             <h3 className="text-xl font-semibold mb-2">Forfaits Flexibles</h3>
             <p className="text-gray-400">Choisissez le forfait parfait pour vos besoins</p>
+            <div className="flex flex-wrap gap-4 mt-4 justify-center">
+              <div className="flex items-center gap-2">
+                <Calendar className="w-6 h-6 text-purple-500" />
+                <span className="text-sm">1 Mois</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Calendar className="w-6 h-6 text-blue-500" />
+                <span className="text-sm">2 Mois</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Calendar className="w-6 h-6 text-green-500" />
+                <span className="text-sm">3 Mois</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Calendar className="w-6 h-6 text-yellow-500" />
+                <span className="text-sm">6 Mois</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Calendar className="w-6 h-6 text-red-500" />
+                <span className="text-sm">12 Mois</span>
+              </div>
+            </div>
           </div>
 
           <div className="bg-gray-800/50 backdrop-blur-sm p-6 rounded-xl">
