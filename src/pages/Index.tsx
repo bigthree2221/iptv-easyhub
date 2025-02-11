@@ -1,4 +1,3 @@
-
 import { Tv2, CreditCard, Smartphone, Laptop, MonitorPlay, Download, Video, Film, Play, Monitor, Tv, Calendar, Tablet } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useQuery } from "@tanstack/react-query";
@@ -10,14 +9,19 @@ const Index = () => {
   const navigate = useNavigate();
   const { toast } = useToast();
 
-  const { data: subscriptions, isLoading } = useQuery({
+  const { data: subscriptions, isLoading, error } = useQuery({
     queryKey: ['subscriptions'],
     queryFn: async () => {
+      console.log('Fetching subscriptions...');
       const { data, error } = await supabase
         .from('subscriptions')
         .select('*');
       
-      if (error) throw error;
+      if (error) {
+        console.error('Error fetching subscriptions:', error);
+        throw error;
+      }
+      console.log('Subscriptions data:', data);
       return data;
     }
   });
@@ -45,6 +49,11 @@ const Index = () => {
       });
     }
   };
+
+  if (error) {
+    console.error('Error in component:', error);
+    return <div className="text-center text-red-500">Une erreur est survenue lors du chargement des abonnements.</div>;
+  }
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-900 to-black text-white">
