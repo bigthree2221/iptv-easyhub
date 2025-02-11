@@ -3,8 +3,13 @@ import { Tv2, CreditCard, Smartphone, Laptop, MonitorPlay, Download, Video, Film
 import { Button } from "@/components/ui/button";
 import { useQuery } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
+import { useNavigate } from "react-router-dom";
+import { useToast } from "@/components/ui/use-toast";
 
 const Index = () => {
+  const navigate = useNavigate();
+  const { toast } = useToast();
+
   const { data: subscriptions, isLoading } = useQuery({
     queryKey: ['subscriptions'],
     queryFn: async () => {
@@ -27,9 +32,33 @@ const Index = () => {
     window.open('https://www.iptvsmarters.com/', '_blank');
   };
 
+  const handleLogout = async () => {
+    try {
+      const { error } = await supabase.auth.signOut();
+      if (error) throw error;
+      navigate("/auth");
+    } catch (error: any) {
+      toast({
+        variant: "destructive",
+        title: "Erreur",
+        description: error.message,
+      });
+    }
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-900 to-black text-white">
       <div className="container mx-auto px-4 py-16">
+        <div className="flex justify-end mb-8">
+          <Button
+            variant="outline"
+            className="border-blue-500 text-blue-500 hover:bg-blue-500/10"
+            onClick={handleLogout}
+          >
+            Déconnexion
+          </Button>
+        </div>
+
         <div className="text-center max-w-3xl mx-auto">
           <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-blue-600">
             Votre Solution IPTV Premium
