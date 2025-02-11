@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { useToast } from "@/components/ui/use-toast";
+import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
 
 const Auth = () => {
@@ -54,7 +54,7 @@ const Auth = () => {
         });
         if (error) {
           // Handle email not confirmed error
-          if (error.message === "Email not confirmed") {
+          if (error.message.includes("Email not confirmed")) {
             toast({
               variant: "destructive",
               title: "Email non confirmé",
@@ -72,10 +72,12 @@ const Auth = () => {
         navigate("/");
       }
     } catch (error: any) {
+      // Handle any unexpected errors
+      const errorMessage = error.error?.message || error.message || "Une erreur est survenue";
       toast({
         variant: "destructive",
         title: "Erreur",
-        description: error.message,
+        description: errorMessage,
       });
     } finally {
       setIsLoading(false);
